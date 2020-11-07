@@ -1,19 +1,47 @@
 'use strict';
 
 
-const firstName = ["Tom", "Jerry"];
+const jerry = {
+    mass: 45,
+    height: 10,
 
-const massTom = 3632; // convert everything to grams : 1 lb * 454
-const massJerry = 45;
-const heightTom = 22.86; // convert everything to centemeters : 1 inch * 2.54
-const heightJerry = 10;
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height ** 2);
+        return this.BMI;
+    }
+};
 
-const tomBMI = massTom / (heightTom ** 2);
-const jerryBMI = massJerry / (heightJerry ** 2);
+const tom = {
+    mass: 8, 
+    height: 9, 
 
+    calcBMI: function () {
+        this.BMI = this.mass/(this.height ** 2);
+        return this.BMI;   
+    }
+};
 
-if(tomBMI > jerryBMI) {
-    console.log(`Tom's BMI of ${tomBMI} is higher than Jerry's ${jerryBMI} BMI`);
-} else {
-    console.log(`Jerry's BMI of ${jerryBMI} is higher than Tom's ${tomBMI} BMI`);
+jerry.calcBMI ();
+tom.calcBMI();
+// console.log(jerry.BMI, tom.BMI )
+
+function BMIsummary () {
+    return ` Is Tom’s BMI higher than Jerry’s? ${tom.BMI > jerry.BMI}!`;
 }
+
+console.log(BMIsummary(tom.BMI > jerry.BMI));
+
+
+
+// if(tom.BMI > jerry.BMI) {
+//     console.log(`Tom's BMI of ${tom.BMI} is higher than Jerry's ${jerry.BMI} BMI`);
+// } else {
+//     console.log(`Jerry's BMI of ${jerry.BMI} is higher than Tom's ${tom.BMI} BMI`);
+// }
+
+
+
+
+
+
+
